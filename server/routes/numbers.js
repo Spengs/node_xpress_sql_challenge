@@ -15,9 +15,9 @@ var rando = function randomNumber(min, max){
             res.sendStatus(500);
           }
 
-          client.query('INSERT INTO animals (number)'
-                      + 'VALUES ($1)',
-                      [rando(1, 100)],//number.randomNumber(1, 100),
+          client.query('INSERT INTO animals (type, number)'
+                      + 'VALUES ($1, $2)',
+                      [animal.type, rando(1, 100)],//number.randomNumber(1, 100),
                       function(err, result){
                         done();
                         if(err){
@@ -29,6 +29,7 @@ var rando = function randomNumber(min, max){
                   });
       });
     });
+
 
 
 

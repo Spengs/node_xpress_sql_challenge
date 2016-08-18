@@ -38,7 +38,7 @@ $.each($('#animal-form').serializeArray(), function (i, field) {
 
 $.ajax({
   type: 'POST',
-  url: '/animals',
+  url: '/numbers',
   data: animal,
   success: function () {
     console.log('POST /animals works!');
